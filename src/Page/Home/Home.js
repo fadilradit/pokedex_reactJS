@@ -22,8 +22,6 @@ class Home extends Component{
         
        await axios.get('https://pokeapi.co/api/v2/pokemon/')
         .then(res => {
-            console.log(res.data.results);
-            // this.setState({pokemon: res.data.results})
             const resArr = res.data.results
             const resData = resArr.length
 
@@ -32,7 +30,6 @@ class Home extends Component{
 
                 axios.get(linkUrl)
                 .then(res => {
-                    console.log(res.data);
                     const fixData = res.data
                     this.setState({pokemon: [...this.state.pokemon, fixData]})
                 })
@@ -85,7 +82,6 @@ class Home extends Component{
     render(){
         const {pokemon} = this.state
 
-        console.log(pokemon);
         
         return(
             <div className = "home-body" id = "home-body" >

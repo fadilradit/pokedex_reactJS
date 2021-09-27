@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col} from 'reactstrap'
 import axios from 'axios'
 
 import './Detail.css'
@@ -60,7 +59,6 @@ class Detail extends Component{
             for (let i = 0; i < statsLength; i++) {
                 const fixData = dataStats[i].base_stat
                 this.setState({stats: [...this.state.stats, fixData]})
-                console.log(dataStats[i].base_stat);
                 
             }
             
@@ -75,7 +73,6 @@ class Detail extends Component{
     toogle = (tab) => {
         if(tab !== this.state.activeTab){
             this.setState({activeTab: tab})
-            console.log("Pindah");
         }
        
     }
@@ -93,7 +90,6 @@ class Detail extends Component{
                         </div>
         }
         else{
-            console.log(types[0]);
         }
         return typeList
 
@@ -102,8 +98,7 @@ class Detail extends Component{
     render(){
         const item = this.state.pokemonData
         const {types, pokPict, abilities, stats} = this.state
-        console.log(stats);
-        console.log(item);
+
 
         return(
 
@@ -124,8 +119,7 @@ class Detail extends Component{
                                         <p>{types[0]}</p>
                                     </div>
                                 }
-                                {/* <p>{types[0].type.name}</p>
-                                <p>{types[1].type.name}</p> */}
+                                
                             
                         </div>
                         <div className = "detail-id" id = "detail-id" >
@@ -206,28 +200,7 @@ class Detail extends Component{
                 
             </main>
 
-            // <div  style = {{display: "flex", flexDirection: "row", width:"100%"}}>
-            //     <h1 
-            // onClick={() => {this.toogle('1')}} style ={{marginRight: "10px"}}>Coba1</h1>
-            //     <h1 
-            // onClick={() => {this.toogle('2')}}>Coba2</h1>
-            //     <TabContent activeTab = {this.state.activeTab} >
-            //         <TabPane tabId = "1">
-            //             <Row>
-            //                 <Col sm="12">
-            //                     <h4>Tab 1 Contents</h4>
-            //                 </Col>
-            //             </Row>
-            //         </TabPane>
-            //         <TabPane tabId = "2">
-            //             <Row>
-            //                 <Col sm="12">
-            //                     <h4>Tab 2 Contents</h4>
-            //                 </Col>
-            //             </Row>
-            //         </TabPane>
-            //     </TabContent>
-            // </div>
+            
     
         )
     }
