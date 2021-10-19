@@ -81,7 +81,7 @@ class Home extends Component{
 
     render(){
         const {pokemon} = this.state
-
+        console.log(window.location);
         
         return(
             <div className = "home-body" id = "home-body" >
