@@ -98,6 +98,7 @@ class Detail extends Component{
     render(){
         const item = this.state.pokemonData
         const {types, pokPict, abilities, stats} = this.state
+        console.log(window.location);
 
 
         return(
