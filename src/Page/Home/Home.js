@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 
 import pokeball from '../../Image/Pokeball.png'
 import './Home.css'
+import music from '../../Image/Cena.mp3'
 
 class Home extends Component{
     constructor(props){
@@ -92,7 +93,9 @@ class Home extends Component{
                 
                 <div className = "card-container" id = "card-container" >{this.renderList()}</div>
                 
-                
+                <audio controls autoPlay loop >
+                        <source src = {music} type = "audio/mpeg" />
+                    </audio>
             </div>
         )
     }
